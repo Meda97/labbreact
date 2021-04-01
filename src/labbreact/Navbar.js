@@ -1,4 +1,4 @@
-import react from 'react';
+import react, {useState, useEffect} from 'react';
 import Skapatråd from './Skapatråd'
 // import Navbar from './Navbar'
 import Aktier from './Aktier'
@@ -13,6 +13,38 @@ import {
 
 
 function Navbar() {
+
+    const getCategoriesUrl = 'https://forum-api-jkrop.ondigitalocean.app/sandbox/MedasAPI/category'
+    const [forumCategories, setForumCategories] = useState([]);
+
+    useEffect(() => {
+        if(forumCategories.length === 0) {
+            fetch(getCategoriesUrl).then(res => res.json().then(data => setForumCategories(data)));
+        }
+    })
+    console.log(forumCategories)
+    const catDropdown = (
+        <select>
+            {forumCategories.map(p => (<option value={p.name}>{p.name}</option>))}
+        </select>
+    );
+
+    console.log(forumCategories)
+    const catDropdown1 = (
+      <div className="dropdown-menu">
+            {forumCategories.map(p => (<a href={p.name}>{p.name}</a>))}
+      </div>
+    );
+
+    // <a className="dropdown-item" href="Aktier">Aktier</a>
+
+    // <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+    // <a class="dropdown-item" href="Aktier">Aktier</a>
+    // <a class="dropdown-item" href="Fonder">Fonder</a>
+    // <a class="dropdown-item" href="Sparmål">Sparmål</a>
+    // </div>
+
+
     return (
       <Router>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -29,11 +61,6 @@ function Navbar() {
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Kategorier
               </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="Aktier">Aktier</a>
-                <a class="dropdown-item" href="Fonder">Fonder</a>
-                <a class="dropdown-item" href="Sparmål">Sparmål</a>
-              </div>
             </li>
           </ul>
         </div>
