@@ -58,17 +58,6 @@ function Navbar() {
           </ul>
         </div>
       </nav>
-      <div>
-        <table>
-          <thead>
-            <tr>
-              <th>Titel</th>
-              <th>Trådmeddelande</th>
-              </tr>
-              </thead>
-              </table>
-              </div>
-
       <Switch>
 
       <Route path='/Skapatråd'>

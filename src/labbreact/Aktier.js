@@ -18,20 +18,9 @@ function Aktier(){
     })
 
     return (
-        <div>
-            <h2>{name}</h2>
-            <div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Titel</th>
-                            <th>Trådmeddelande</th>
-                        </tr>
-                    </thead>
-                </table>
-            </div>
-
-            {threads.map( item => (<div><p>{item.title}</p><p>{item.content}</p></div>))}
+        <div className="tr">
+            <h2 style={{color: "red"}}>{name}</h2>
+            {threads.map( item => (<div><h3 style={{color: "blue"}}>Titel</h3><p>{item.title}</p><h3 style={{color: "#2eb82e"}}>Trådmeddelande</h3><p>{item.content}</p></div>))}
         </div>
     )
 }
