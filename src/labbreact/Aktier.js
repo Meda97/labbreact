@@ -1,8 +1,15 @@
 import react from 'react';
+import {
+    useParams
+  } from "react-router-dom";
 
-function Aktier() {
+function Aktier()
+    {const {id, name} = useParams();
     return (
-        <h1>Aktier</h1>
+        <div>
+            <h2>{name}</h2>
+            <p>{id}</p>
+        </div>
     )
 }
 
