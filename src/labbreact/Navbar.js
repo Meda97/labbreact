@@ -14,7 +14,7 @@ import {
 
 function Navbar() {
 
-    const getCategoriesUrl = 'https://forum-api-jkrop.ondigitalocean.app/sandbox/MedasAPI/category'
+    const getCategoriesUrl = 'https://forum-api-jkrop.ondigitalocean.app/sandbox/MeddasAPI/category'
     const [forumCategories, setForumCategories] = useState([]);
 
     useEffect(() => {
@@ -58,7 +58,17 @@ function Navbar() {
           </ul>
         </div>
       </nav>
-      {/* <h1 className = "Välkommen">Välkommen till Aktieforum Sverige</h1> */}
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th>Titel</th>
+              <th>Trådmeddelande</th>
+              </tr>
+              </thead>
+              </table>
+              </div>
+
       <Switch>
 
       <Route path='/Skapatråd'>

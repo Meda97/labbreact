@@ -3,7 +3,7 @@ import './style.css';
 
 function Skapatråd() {
 
-    const getCategoriesUrl = 'https://forum-api-jkrop.ondigitalocean.app/sandbox/MedasAPI/category'
+    const getCategoriesUrl = 'https://forum-api-jkrop.ondigitalocean.app/sandbox/MeddasAPI/category'
     const [forumCategories, setForumCategories] = useState([]);
 
     useEffect(() => {
@@ -53,6 +53,7 @@ function Skapatråd() {
         body: JSON.stringify(requestBody)}
 
         fetch(getThreadUrl,httpConfig)
+        .then(res => res => { setThreadtitle(""); setThreadmessage(""); res.json()})
     }
 }
     
