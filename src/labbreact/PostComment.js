@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 const baseURL = `https://forum-api-jkrop.ondigitalocean.app`;
 
 const PostComment = ({id}) => {
-
+  console.log(id)
     const postCommentURL = `${baseURL}/thread/${id}/comment`
 
     const [commentTitle, setCommentTitle] = useState('');

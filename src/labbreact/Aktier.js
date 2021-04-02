@@ -26,13 +26,14 @@ function Aktier(){
         <div className="tr">
             <div>
             <h2 style={{color: "red"}}>{name}</h2>
-            {threads.map( item => (<div><h3 style={{color: "blue"}}>Titel</h3><p>{item.title}</p><h3 style={{color: "#2eb82e"}}>Trådmeddelande</h3><p>{item.content}</p></div>))}
-            </div>
-            <div>
-            <PostComment/>
-            </div>
-            <div>
-            <PostLike/>
+            {threads.map( item => (<div><h3 style={{color: "blue"}}>Titel</h3><p>{item.title}</p><h3 style={{color: "#2eb82e"}}>Trådmeddelande</h3><p>{item.content}</p>
+            <ul>
+            <li>
+                    <PostComment id={item._id}/>
+                    <PostLike id={item._id} type="THREAD"></PostLike>
+            </li>
+            </ul>
+            </div>))}
             </div>
         </div>
     )}
