@@ -4,6 +4,13 @@ import {
   } from "react-router-dom";
   import './style.css';
 
+// import PostLike from './PostLike';
+// import PostThread from './PostThread'
+import {Link} from 'react-router-dom'
+import PostComment from './PostComment'
+
+
+
 
 function Aktier(){
     const {id, name} = useParams();
@@ -21,9 +28,10 @@ function Aktier(){
         <div className="tr">
             <h2 style={{color: "red"}}>{name}</h2>
             {threads.map( item => (<div><h3 style={{color: "blue"}}>Titel</h3><p>{item.title}</p><h3 style={{color: "#2eb82e"}}>Trådmeddelande</h3><p>{item.content}</p></div>))}
+            <ul style="uls">
+            <PostComment/>
+            </ul>
         </div>
-    )
-}
-
+    )}
 
 export default Aktier;

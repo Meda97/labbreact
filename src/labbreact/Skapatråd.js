@@ -11,12 +11,6 @@ function Skapatråd() {
             fetch(getCategoriesUrl).then(res => res.json().then(data => setForumCategories(data)));
         }
     })
-    // console.log(forumCategories)
-    // const catDropdown = (
-    //     <select>
-    //         {forumCategories.map(p => (<option value={p._id}>{p.name}</option>))}
-    //     </select>
-    // );
 
     const [threadtitle, setThreadtitle] = useState("");
     const handleTitleChange = (event) => {
