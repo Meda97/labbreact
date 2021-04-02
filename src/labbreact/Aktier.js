@@ -4,12 +4,10 @@ import {
   } from "react-router-dom";
   import './style.css';
 
-// import PostLike from './PostLike';
+import PostLike from './PostLike';
 // import PostThread from './PostThread'
 import {Link} from 'react-router-dom'
 import PostComment from './PostComment'
-
-
 
 
 function Aktier(){
@@ -26,11 +24,16 @@ function Aktier(){
 
     return (
         <div className="tr">
+            <div>
             <h2 style={{color: "red"}}>{name}</h2>
             {threads.map( item => (<div><h3 style={{color: "blue"}}>Titel</h3><p>{item.title}</p><h3 style={{color: "#2eb82e"}}>Trådmeddelande</h3><p>{item.content}</p></div>))}
-            <ul style="uls">
+            </div>
+            <div>
             <PostComment/>
-            </ul>
+            </div>
+            <div>
+            <PostLike/>
+            </div>
         </div>
     )}
 

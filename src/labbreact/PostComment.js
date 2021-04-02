@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const baseURL = `https://forum-api-jkrop.ondigitalocean.app/`;
+const baseURL = `https://forum-api-jkrop.ondigitalocean.app`;
 
 const PostComment = ({id}) => {
 
@@ -43,21 +43,25 @@ const PostComment = ({id}) => {
       <div>
         <h2>Kommentera tråd</h2>
         <section>
-          <label>Titel: </label>
+          <label>Titel:</label>
+          <br></br>
           <input type="text"
             value={commentTitle}
             onChange={(e) => handleOnChange(e)}
           ></input>
         </section>
         <section>
-          <label>Innehåll: </label>
+          <label>Innehåll:</label>
+          <br></br>
           <textarea type="text" value={commentContent} onChange={(e) => handleContentChange(e)}></textarea>
         </section>
         <button onClick={() => submitComment()}>Skicka</button>
+        <br></br>
+        <br></br>
         <h3>Svar från API - ny kommentar</h3>
         <textarea value={response}></textarea>
       </div>
     )
 }
 
-export default PostComment
+export default PostComment;
