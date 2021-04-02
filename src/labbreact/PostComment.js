@@ -58,7 +58,7 @@ const PostComment = ({id}) => {
         <button onClick={() => submitComment()}>Skicka</button>
         <br></br>
         <br></br>
-        <h3>Svar från API - ny kommentar</h3>
+        <h3>Ny kommentar</h3>
         <textarea value={response}></textarea>
       </div>
     )

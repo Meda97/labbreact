@@ -26,8 +26,11 @@ const PostLike = ({id, type}) => {
 
     return postLikeURL !== "" ? (
         <div>
+            <br></br>
+            <br></br>
+            <br></br>
             <button onClick={() => submitLike()}>Like</button>
-            <h3>Svar från API - skapad like</h3>
+            <h3>Skapad like</h3>
             <textarea value={res}></textarea>
         </div>) : (<p>Error!</p>)
 }
