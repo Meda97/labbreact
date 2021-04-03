@@ -5,8 +5,6 @@ import {
   import './style.css';
 
 import PostLike from './PostLike';
-// import PostThread from './PostThread'
-import {Link} from 'react-router-dom'
 import PostComment from './PostComment'
 
 
