@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-
 const PostLike = ({id, type, likes}) => {
     let postLikeURL = "";
     if(type === "COMMENT") {
@@ -11,29 +10,22 @@ const PostLike = ({id, type, likes}) => {
     else{
         postLikeURL = "";
     }
-
     const [res, setRes] = useState('');
-
+    const [count, setCount] = useState(likes++);
     const submitLike = async () => {
         const apiResponse = await fetch(postLikeURL, {
             method: 'POST'}
-        );
-
-        const data = await apiResponse.json();
-        setRes(JSON.stringify(likes));
-        
-
+        )
+        setRes(JSON.stringify(setCount(prevCount => prevCount + 1)));
     }
-
     return postLikeURL !== "" ? (
         <div>
             <br></br>
             <br></br>
             <br></br>
-            <button onClick={() => submitLike()}>Like</button>
+            <button onClick={() => {submitLike()}}>Like</button>
             <h3>Skapad like</h3>
-            <textarea value={res}></textarea>
+            <textarea value={count}></textarea>
         </div>) : (<p>Error!</p>)
 }
-
 export default PostLike
