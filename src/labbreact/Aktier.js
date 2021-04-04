@@ -28,7 +28,7 @@ function Aktier(){
             <ul>
             <li>
                     <PostComment id={item._id}/>
-                    <PostLike id={item._id} type="THREAD"></PostLike>
+                    <PostLike id={item._id} type="THREAD" likes={item.likes.length}></PostLike>
             </li>
             </ul>
             </div>))}

@@ -36,7 +36,7 @@ const PostComment = ({id}) => {
       const data = await apiResponse.json();
       setCommentTitle('');
       setCommentContent('');
-      setResponse(JSON.stringify(data));
+      setResponse(JSON.stringify("Titel:  " + data.title) + "\n" + JSON.stringify("Kommentar:  " + data.content));
     }
 
     return (
@@ -51,7 +51,7 @@ const PostComment = ({id}) => {
           ></input>
         </section>
         <section>
-          <label>Innehåll:</label>
+          <label>Kommentar:</label>
           <br></br>
           <textarea type="text" value={commentContent} onChange={(e) => handleContentChange(e)}></textarea>
         </section>

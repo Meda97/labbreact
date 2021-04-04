@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const PostLike = ({id, type}) => {
+const PostLike = ({id, type, likes}) => {
     let postLikeURL = "";
     if(type === "COMMENT") {
         postLikeURL = `https://forum-api-jkrop.ondigitalocean.app/comment/${id}/like`;
@@ -20,7 +20,8 @@ const PostLike = ({id, type}) => {
         );
 
         const data = await apiResponse.json();
-        setRes(JSON.stringify(data));
+        setRes(JSON.stringify(likes));
+        
 
     }
 
